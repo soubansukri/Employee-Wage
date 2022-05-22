@@ -9,10 +9,11 @@ public class EmpWage {
 		int wagePerDay = 0;
 		int partTimeHours = 4;
 		int monthlySalary = 0;
-		int day = 1;
+		int day = 0;
 		int monthlyHours = 0;
 	
-		for (day = 1; day <= 20; day++) {
+		while (monthlyHours != 100 && day != 20) {
+			day++;
 			Random random = new Random();
 			int attendance = random.nextInt(3);
 			switch (attendance) {
@@ -28,12 +29,13 @@ public class EmpWage {
 			case 2:
 				System.out.println("Employee is present for part time");
 				wagePerDay = partTimeHours * wagePerHour;
+				monthlyHours=monthlyHours+partTimeHours;
 				System.out.println("Employee's daily wage is:" + wagePerDay);
 				break;
 
 			}
 			monthlySalary = monthlySalary + wagePerDay;
-			System.out.println(" Day is: " +day + " Monthly Salary is: " + monthlySalary);
+			System.out.println(" Day is: " +day +" monthlyHours: "+ monthlyHours +" Monthly Salary is: " + monthlySalary);
 		}
 
 	}
