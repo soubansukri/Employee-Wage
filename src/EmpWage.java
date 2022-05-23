@@ -19,10 +19,10 @@ public class EmpWage {
 			switch (attendance) {
 			case 0:
 				System.out.println("Employee is absent");
-				break;
+		 		break;
 			case 1:
-				System.out.println("Employee is present");
-				wagePerDay = fullDayHours * wagePerHour;
+				System.out.println("Employee  is present");
+		 		wagePerDay = fullDayHours * wagePerHour;
 				monthlyHours=monthlyHours+fullDayHours;
 				System.out.println("Employee's daily wage is:" + wagePerDay);
 				break;
