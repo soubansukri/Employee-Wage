@@ -1,25 +1,23 @@
 import java.util.Random;
 
 public class EmpWage {
-	static int wagePerHour = 20;
-	static int fullDayHours = 8;
-	static int partTimeHours = 4;
-	static int monthlySalary = 0;
-	static int day = 0;
-	static int monthlyHours = 0;
+	static final int  fullDayHours = 8;
+	static final int partTimeHours = 4;
 
 	public static void main(String[] args) {
 		System.out.println(" Welcome to Employee Wage Computation Program ");
 
-		empWage();
-		System.out
-				.println(" Day is: " + day + " monthlyHours: " + monthlyHours + " Monthly Salary is: " + monthlySalary);
+		empWage("CES",15,6,104);
+		empWage("TCS",15,10,104);
 	}
 
-	public static int empWage() {
+	public static void empWage(String companyName,int wagePerHour,int maxWorkingDays,int maximumHrsPerMnth) {
 		int wagePerDay = 0;
-
-		while (monthlyHours != 100 && day != 20) {
+		int day = 0;
+		int monthlyHours = 0;
+		int monthlySalary = 0;
+		System.out.println("Stats of employee working in "+companyName+" company are:");
+		while (monthlyHours != maximumHrsPerMnth && day != maxWorkingDays) {
 			day++;
 			Random random = new Random();
 			int attendance = random.nextInt(3);
@@ -42,8 +40,9 @@ public class EmpWage {
 
 			}
 			monthlySalary = monthlySalary + wagePerDay;
-
+			System.out
+			.println(" Day is: " + day + " monthlyHours: " + monthlyHours + " Monthly Salary is: " + monthlySalary);
 		}
-		return monthlySalary;
+//		return monthlySalary;
 	}
 }
